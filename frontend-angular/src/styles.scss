@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+@import "toastr";
+@include mat-core();
+$Front-primary: mat-palette($mat-indigo);
+$Front-accent: mat-palette($mat-pink, A200, A100, A400);
+$Front-warn: mat-palette($mat-red);
+$Front-theme: mat-light-theme((
+  color: (
+    primary: $Front-primary,
+    accent: $Front-accent,
+    warn: $Front-warn,
+  )
+));
+
+@include angular-material-theme($Front-theme);
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-snack-bar-container{
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}

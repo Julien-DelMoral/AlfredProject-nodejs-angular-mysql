@@ -1,0 +1,148 @@
+
+
+.brand-name{
+    width: 400px;
+    margin-left:calc(50% - 200px);
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    font-size: 35px;
+    font-weight: 400;
+    color: #316df0;
+    letter-spacing: 2px;
+
+    img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+mat-card{
+    box-sizing: border-box;
+    width: 400px;
+    margin-left:calc(50% - 200px);
+    border: 1px solid #d4ddf0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgb(8 100 207 / 12%) !important;
+    padding: 50px 50px 20px;
+    display: block;
+    margin: auto;
+    
+    mat-card-title{
+        padding-bottom: 20px;
+        color: #234361;
+        font-weight: 400;
+        margin: 0 auto 15px;
+        font-size: 26px;
+    }
+
+    mat-card-title, mat-card-content, mat-card-actions{
+        display: flex;
+        justify-content: center;
+    }
+
+    mat-card-actions{
+        text-align: center;
+    }
+
+    input{
+        min-width: 300px;
+        max-width: none;
+        border: 1px solid #d4ddf0;
+        padding: 10px 15px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+
+    input.invalid-form{
+        border: 1px solid #3d464e;
+    }
+
+    label{
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1px;
+        line-height: 25px;
+        font-weight: 400;
+        text-align: left;
+        color: #66788a;
+        display: inline;
+
+       
+    }
+
+    label.invalid-form{
+        font-weight: 700;
+        color: #3d464e;
+    }
+
+
+    button{
+        min-width: 200px;
+        background-color: #316df0;
+        color: #fff;
+        border-radius: 4px;
+        text-transform: uppercase;
+        height: 40px;
+        letter-spacing: .8px;
+        font-size: 12px;
+        margin-top: 10px;
+        font-weight: 500;
+    }
+    
+    .link-row{
+        width: 100%;
+        text-align: center;
+        color: #66788a;
+        margin-bottom: 20px;
+    }
+    a{  
+        :hover{
+            cursor:pointer !important;
+        }
+        text-decoration: underline;
+        
+    }
+        
+}
+
+mat-card.submitted{
+    width: 600px;
+    margin-left:calc(50% - 300px);
+
+    mat-card-title.submitted{
+        padding-bottom: 0px;
+        color: #234361;
+        font-weight: 400;
+        margin: 0 auto 15px;
+        font-size: 26px;
+        display: block !important;
+
+        div{
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        div.title{
+            margin-bottom: 20px;
+        }
+
+        div.info-text{
+            font-size: 14px;
+            color: #234361;
+        }
+
+        .italic-text{
+            font-style: italic;
+            color: #66788a;
+        }
+
+        .link-row{
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    }
+}

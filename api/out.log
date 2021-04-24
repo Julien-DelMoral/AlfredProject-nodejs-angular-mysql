@@ -1,0 +1,30 @@
+Server on port 3000
+DB is connected
+[0mPOST /api/users/login [32m200 [0m261.169 ms - 45[0m
+[0mGET /api/interventions [32m200 [0m80.929 ms - 7498[0m
+[0mGET /api/interventions/nom/client/1441267 [32m200 [0m49.765 ms - 34[0m
+[0mGET /api/interventions/client/1441267 [32m200 [0m4614.844 ms - 710124[0m
+[0mGET /api/users/logout [32m200 [0m1.706 ms - 28[0m
+[0mPOST /api/users/login [32m200 [0m131.946 ms - 45[0m
+[0mGET /api/interventions [36m304 [0m44.964 ms - -[0m
+[0mGET /api/interventions/nom/client/1342048 [32m200 [0m145.824 ms - 36[0m
+[0mGET /api/interventions/client/1342048 [32m200 [0m3019.666 ms - 55381[0m
+Invalid token
+[0mGET /api/interventions [33m401 [0m1.326 ms - 61[0m
+[0mPOST /api/users/login [32m200 [0m134.349 ms - 45[0m
+[0mGET /api/interventions [32m200 [0m44.110 ms - 7498[0m
+[0mGET /api/interventions/nom/client/1342048 [32m200 [0m62.409 ms - 36[0m
+[0mGET /api/interventions/client/1342048 [32m200 [0m78.435 ms - 55381[0m
+[0mGET /api/interventions/historique/995760 [32m200 [0m829.043 ms - 265[0m
+[0mGET /api/interventions/infos/historique/995760 [0m- [0m- ms - -[0m
+[0mGET /api/interventions [36m304 [0m46.500 ms - -[0m
+[0mGET /api/interventions/nom/client/1342048 [36m304 [0m55.026 ms - -[0m
+[0mGET /api/interventions/client/1342048 [36m304 [0m66.080 ms - -[0m
+[0mGET /api/interventions [36m304 [0m384.061 ms - -[0m
+[0mGET /api/interventions/nom/client/1527370 [32m200 [0m63.922 ms - 17[0m
+[0mGET /api/interventions/client/1527370 [32m200 [0m3150.113 ms - 6937[0m
+[0mGET /api/interventions/historique/731538 [32m200 [0m820.978 ms - 268[0m
+[0mGET /api/interventions/infos/historique/731538 [0m- [0m- ms - -[0m
+[0mGET /api/interventions [36m304 [0m42.170 ms - -[0m
+[0mGET /api/interventions/nom/client/1441267 [36m304 [0m39.095 ms - -[0m
+[0mGET /api/interventions/client/1441267 [36m304 [0m3153.336 ms - -[0m

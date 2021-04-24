@@ -1,0 +1,9 @@
+# compiled output
+/build
+
+# dependencies
+/node_modules
+
+# private informations
+/app/environments/environment.prod.ts
+/app/environments/environment.preprod.ts

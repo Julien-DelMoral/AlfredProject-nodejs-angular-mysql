@@ -1,0 +1,80 @@
+
+<div class="brand-name">
+  <fa-icon [icon]="logo"></fa-icon> ALFRED
+</div>
+
+<mat-card *ngIf="!submitted">
+
+  <mat-card-title>Connexion</mat-card-title>
+
+  <mat-card-content>
+    <form class="form" [formGroup]="loginForm">
+      <table>
+        <tr>
+          <td>
+            <label [ngClass]="{'invalid-form': invalidForm === true}">Email :</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input formControlName="username" matInput placeholder="" [ngClass]="{'invalid-form': invalidForm === true}" (focusout)="focusOutFunction()">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label [ngClass]="{'invalid-form': invalidForm === true}">Mot de passe :</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input formControlName="password" type="password" matInput placeholder="" [ngClass]="{'invalid-form': invalidForm === true}" (focusout)="focusOutFunction()">
+          </td>
+        </tr>
+      </table>
+
+      <mat-card-actions>
+        <button mat-stroked-button type="submit" (click)="login()" color="primary">Connexion</button>
+      </mat-card-actions>
+
+      <div class="link-row">
+        <a href="/resetPassword">Mot de passe oublié ?</a>
+      </div>
+      <div class="link-row">
+        Vous n’avez pas encore de compte ?   <a href="/register">Inscrivez-vous ici</a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="submitted" class="submitted">
+  <mat-card-title class="submitted">
+      <div class="title">
+        Valider mon adresse mail
+      </div>
+      <div class="info-text">
+        Un mail vous permettant de valider votre inscription vous a été envoyé.
+      <br>
+        <span class="italic-text">NB : si le mail n’apparait pas dans votre boite de réception, pensez à consulter vos Spams</span>
+      </div>
+  </mat-card-title>
+  <mat-card-actions class="submitted">
+    <table>
+      <tr>
+        <td>
+          <span>Vous n'avez pas reçu de mail de confirmation ?</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button mat-stroked-button type="submit" (click)="sendConfirmEmail()" color="primary">Envoyer un nouveau mail</button>
+        </td>        
+      </tr>
+    </table>
+  </mat-card-actions>
+  <div class="link-row">
+    Vous n’avez pas encore de compte ?   <a href="/register">Inscrivez-vous ici</a>
+  </div>
+  <div class="link-row">
+      Vous avez déjà un compte ?   <a href="/login">Connectez-vous</a>
+    </div>
+</mat-card>

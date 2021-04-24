@@ -1,0 +1,18 @@
+.toast{
+    box-sizing: border-box;
+    width: 300px;
+    margin-left:calc(50% - 150px);
+    border: 1px solid #d4ddf0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgb(8 100 207 / 20%) !important;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    color: #66788a;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20%;
+    cursor: pointer;
+}
+
