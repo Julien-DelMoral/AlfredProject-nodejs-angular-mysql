@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  mysql:
+    container_name: MYSQL
+    build:
+      context: ./mysql
+    networks:
+      - internal
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysql_alfred
+
+  mailhog:
+    container_name: SMTP
+    image: mailhog/mailhog
+    ports: 
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge      
+
+volumes:
+  mysql_data:

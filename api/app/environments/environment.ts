@@ -7,9 +7,10 @@ const environment = {
     },
     db: {
         host: '127.0.0.1',
-        user : 'dev',
-        password: 'dev',
-        database: 'mysql_alfred'
+        user : 'root',
+        password: 'root',
+        database: 'mysql_alfred',
+        port: 3307
     },
     smtp:{
         host: "localhost",

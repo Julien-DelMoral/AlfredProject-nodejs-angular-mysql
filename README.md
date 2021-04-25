@@ -18,22 +18,43 @@ This is a boilerplate project. The project contains Node.js REST API and fronten
 ## How to start in your local environment
 
 ```bash
+# Docker mysql and fake smtp
+$ docker-compose up -d
+```
+
+```bash
 # Front
 cd frontend-angular
 npm start
+```
 
+```bash
 # Api
 cd api
 npm run build
 npm run dev
 ```
+Then you can access services with below URL.
 
-Then access Frontend  with `http://localhost:4200`, Api with `http://localhost:3000`.
+| Service            | Endpoint                                                         |
+| ------------------ | ---------------------------------------------------------------- |
+| API                | [http://localhost:3000](http://localhost:3000)                   |
+| Frontend           | [http://localhost:4200](http://localhost:4200)                   |
+| Mail               | [http://localhost:8025](http://localhost:8025)                   |
+| MySQL              | localhost:3307                                                   |
+
+There are two user in the database initially. You can use them to login Frontend.
+
+| Username | Email              | Password |
+| -------- | ------------------ | -------- |
+| admin    | admin@alfred.local | 123456   |
+| user     | user@alfred.local  | 123456   |
+
 
 ### MySQL
 
 In the folder `mysql/sql`, there is a SQL file called `inital.sql`, which will become initial database table/rows. MySQL
-port is mapped to 3306.
+port is mapped to 3307.
 
 ## Features
 
@@ -45,7 +66,7 @@ port is mapped to 3306.
   - User login/logout
 
 ## Todo
-- [ ] Docker
+- [x] Docker
 - [ ] CI/CD
 - [ ] Unit tests
 - [ ] E2E tests
