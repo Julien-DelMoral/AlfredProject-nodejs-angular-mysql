@@ -8,8 +8,6 @@ import { faScrewdriver } from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from '../../services';
 import { NotificationService } from '../../services';
 
-import * as toastr from 'toastr';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -53,7 +51,7 @@ export class LoginComponent implements OnInit {
       console.log("Erreur : Formulaire de connexion incomplet");
       return this.notificationService.displayToast('warning',"Formulaire de connexion incomplet");
     }
-
+    
     var formValue = {
       username: this.loginForm.value.username,
       password: this.loginForm.value.password
