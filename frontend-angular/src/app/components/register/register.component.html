@@ -1,53 +1,92 @@
-
-<div class="brand-name"><fa-icon [icon]="logo"></fa-icon>ALFRED</div>
+<div class="brand-name">
+  <fa-icon [icon]="logo"></fa-icon>ALFRED
+</div>
 
 <mat-card *ngIf="!submitted">
-
-  <mat-card-title>Inscription</mat-card-title>
 
   <mat-card-content>
     <form class="form" [formGroup]="registerForm">
       <table>
         <tr>
           <td>
-            <label [ngClass]="{'invalid-form': invalidForm === true}">Email *</label>
+            <label>Email *</label>
           </td>
         </tr>
         <tr>
           <td>
-            <input formControlName="email" matInput placeholder="" [ngClass]="{'invalid-form': invalidForm === true}" (focusout)="focusOutFunction()">
+            <div class="input-wrapper" [ngClass]="{'valid': formValidation.email,'invalid': !formValidation.email && !formIsValid}">
+              <input formControlName="email" matInput placeholder=""
+              (input)="onChangeEmail()">
+              <fa-icon class="check-icon" [icon]="check"></fa-icon>
+              <fa-icon class="times-icon" [icon]="times"></fa-icon>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
-            <label [ngClass]="{'invalid-form': invalidForm === true}">Nom de votre entreprise *</label>
+            <label>Nom de votre entreprise *</label>
           </td>
         </tr>
         <tr>
           <td>
-            <input formControlName="name" matInput placeholder="" [ngClass]="{'invalid-form': invalidForm === true}" (focusout)="focusOutFunction()">
+            <div class="input-wrapper" [ngClass]="{'valid': formValidation.name,'invalid': !formValidation.name && !formIsValid}">
+              <input formControlName="name" matInput placeholder=""
+              (input)="onChangeName()">
+              <fa-icon class="check-icon" [icon]="check"></fa-icon>
+              <fa-icon class="times-icon" [icon]="times"></fa-icon>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
-            <label [ngClass]="{'invalid-form': invalidForm === true}">Mot de passe *</label>
+            <label>Mot de passe *</label>
           </td>
         </tr>
         <tr>
           <td>
-            <input formControlName="password" type="password" matInput placeholder="" [ngClass]="{'invalid-form': invalidForm === true}" (focusout)="focusOutFunction()">
+            <div class="input-wrapper" [ngClass]="{'valid': formValidation.password,'invalid': !formValidation.password && !formIsValid}">
+              <input formControlName="password" type="password" matInput placeholder=""
+                (input)="onChangePassword()">
+                <fa-icon class="check-icon" [icon]="check"></fa-icon>
+                <fa-icon class="times-icon" [icon]="times"></fa-icon>
+            </div>
           </td>
         </tr>
         <tr>
-            <td>
-              <label [ngClass]="{'invalid-form': invalidForm === true}">Confirmation du mot de passe *</label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input formControlName="passwordConfirmation" type="password" matInput placeholder="" [ngClass]="{'invalid-form': invalidForm === true}" (focusout)="focusOutFunction()"> 
-            </td>
-          </tr>
+          <table class="password-validation">
+            <tr>
+              <td [ngClass]="{'valid': passwordValidation.length}">
+                <fa-icon [icon]="checkCircle"></fa-icon> <span>8 caractères minimum</span>
+              </td>
+              <td [ngClass]="{'valid': passwordValidation.number}">
+                <fa-icon [icon]="checkCircle"></fa-icon>Un nombre
+              </td>
+            </tr>
+            <tr>
+              <td [ngClass]="{'valid': passwordValidation.uppercase}">
+                <fa-icon [icon]="checkCircle"></fa-icon>Un caractère en majuscule
+              </td>
+              <td [ngClass]="{'valid': passwordValidation.lowercase}">
+                <fa-icon [icon]="checkCircle"></fa-icon>Un caractère en minuscule
+              </td>
+            </tr>
+          </table>
+        </tr>
+        <tr>
+          <td>
+            <label>Confirmation du mot de passe *</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="input-wrapper" [ngClass]="{'valid': formValidation.passwordConfirmation,'invalid': !formValidation.passwordConfirmation && !formIsValid}">
+              <input formControlName="passwordConfirmation" type="password" matInput placeholder=""
+                (input)="onChangePasswordConfirmation()">
+                <fa-icon class="check-icon" [icon]="check"></fa-icon>
+                <fa-icon class="times-icon" [icon]="times"></fa-icon>
+            </div>
+          </td>
+        </tr>
       </table>
 
       <mat-card-actions>
@@ -55,7 +94,7 @@
       </mat-card-actions>
 
       <div class="link-row">
-        Vous avez déjà un compte ?   <a href="/login">Connectez-vous</a>
+        Vous avez déjà un compte ? <a href="/login">Connectez-vous</a>
       </div>
     </form>
   </mat-card-content>
@@ -64,14 +103,15 @@
 
 <mat-card *ngIf="submitted" class="submitted">
   <mat-card-title class="submitted">
-      <div class="title">
-        Valider mon adresse mail
-      </div>
-      <div class="info-text">
-        Un mail vous permettant de valider votre inscription vous a été envoyé.
+    <div class="title">
+      Valider mon adresse mail
+    </div>
+    <div class="info-text">
+      Un mail vous permettant de valider votre inscription vous a été envoyé.
       <br>
-        <span class="italic-text">NB : si le mail n’apparait pas dans votre boite de réception, pensez à consulter vos Spams</span>
-      </div>
+      <span class="italic-text">NB : si le mail n’apparait pas dans votre boite de réception, pensez à consulter vos
+        Spams</span>
+    </div>
   </mat-card-title>
   <mat-card-actions class="submitted">
     <table>
@@ -82,15 +122,16 @@
       </tr>
       <tr>
         <td>
-          <button mat-stroked-button type="submit" (click)="sendConfirmEmail()" color="primary">Envoyer un nouveau mail</button>
-        </td>        
+          <button mat-stroked-button type="submit" (click)="sendConfirmEmail()" color="primary">Envoyer un nouveau
+            mail</button>
+        </td>
       </tr>
     </table>
   </mat-card-actions>
   <div class="link-row">
-    Vous n’avez pas encore de compte ?   <a href="/register">Inscrivez-vous ici</a>
+    Vous n’avez pas encore de compte ? <a href="/register">Inscrivez-vous ici</a>
   </div>
   <div class="link-row">
-      Vous avez déjà un compte ?   <a href="/login">Connectez-vous</a>
-    </div>
+    Vous avez déjà un compte ? <a href="/login">Connectez-vous</a>
+  </div>
 </mat-card>
