@@ -15,7 +15,19 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@src/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@environments/*": ["src/environments/*"],
+      "@assets/*": ["src/assets/*"],
+      "@core/*": ["src/app/core/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@ui/*": ["src/app/ui/*"],
+      "@account/*": ["src/app/modules/account/*"],
+      "@home/*": ["src/app/modules/home/*"]
+      
+  },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false

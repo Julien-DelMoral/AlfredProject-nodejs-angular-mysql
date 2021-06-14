@@ -12,44 +12,26 @@ import { CookieService } from 'ngx-cookie-service';
 
 // Components imports
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { LoginLayoutComponent } from './layouts/login-layout.component';
-import { HomeComponent } from './components/home/home.component';
-import { HomeLayoutComponent } from './layouts/home-layout.component';
-import { RegisterComponent } from './components/register/register.component';
-import { ToastComponent } from './components/toast/toast.component';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 // Modules imports
-import { AppMaterialModule } from './material/material.module';
-import { AppRoutingModule } from './app-routing.module';
+import { AppMaterialModule } from '@ui/material/material.module';
+import { AppRoutingModule } from '@app/app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-// Services imports
-import { AuthenticationService } from './services';
-import { DataService } from './services';
-import { NotificationService } from './services';
+// Core imports
+import { AuthService } from '@core/auth';
+import { AuthInterceptor } from '@core/interceptors';
+import { ErrorInterceptor } from '@core/interceptors';
+import { HttpCancel } from '@core/http';
+import { NotificationService } from '@core/notification';
+import { DataService } from '@core/data/data.service';
 
-
-// Helpers imports
-import { ErrorInterceptor } from './helpers';
-import { HttpCancel } from './helpers';
-import { JwtInterceptor } from './helpers';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    LoginLayoutComponent,
-    HomeComponent,
-    HomeLayoutComponent,
-    RegisterComponent,
-    ToastComponent,
-    ResetPasswordComponent,
-    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -63,14 +45,13 @@ import { JwtInterceptor } from './helpers';
     FontAwesomeModule,
   ],
   providers: [
-    AuthenticationService,
+    AuthService,
+    AuthInterceptor,
+    ErrorInterceptor,
+    HttpCancel,
     DataService,
     NotificationService,
-    HttpCancel,
-    DatePipe,
-    CookieService,
-    ToastComponent,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
