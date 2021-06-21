@@ -26,12 +26,9 @@ import { HttpCancel } from '@core/http';
 import { NotificationService } from '@core/notification';
 import { DataService } from '@core/data/data.service';
 
-
-
-
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -57,4 +54,3 @@ import { DataService } from '@core/data/data.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

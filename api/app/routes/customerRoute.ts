@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { customerController } from '../controllers/customerController';
+import { loginController } from '../controllers/loginController';
 
 class UsersRoutes {
 
@@ -12,10 +13,9 @@ class UsersRoutes {
   config(): void {
     
     /*  POST  */
-    
-    
-    /*  GET  */                               
-    
+                               
+    /*  GET  */
+    this.router.get('/customers/:id', loginController.isAuthenticated, customerController.getCustomersByUserId);  
   }
 }
 

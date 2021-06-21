@@ -1,0 +1,21 @@
+<mat-toolbar class="top-navigation">
+    <div class="spacer"></div>
+    <button class="user-button" mat-mini-fab [matMenuTriggerFor]="menu" inline>
+        <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu class="user-menu" #menu="matMenu">
+        <span class="title" mat-menu-item>jul.delm@gmail.com</span>
+        <button class="button" mat-menu-item>
+            <mat-icon>person</mat-icon>
+            <span>Profil</span>
+        </button>
+        <button class="button" mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Paramètres</span>
+        </button>
+        <button class="button" mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Déconnexion</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

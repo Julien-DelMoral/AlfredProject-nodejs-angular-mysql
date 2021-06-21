@@ -1,1 +1,97 @@
+<div class="container">
+    <nav>
+        <a>Navbar</a>
+        <div class="spacer"></div>
+        <button class="user-button" mat-mini-fab [matMenuTriggerFor]="menu" inline>
+            <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu class="user-menu" #menu="matMenu">
+            <span class="title" mat-menu-item>jul.delm@gmail.com</span>
+            <button class="button" mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>Profil</span>
+            </button>
+            <button class="button" mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                <span>Paramètres</span>
+            </button>
+            <button class="button" mat-menu-item (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Déconnexion</span>
+            </button>
+        </mat-menu>
+    </nav>
+    <div class="sidenav">Sidebar</div>
+    <div class="content">
+        <div class="row">
+            <div class="card">content</div>
+        </div>
+        <div class="row col-11">
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        <div class="row col-111">
+            <div class="card">content</div>
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        <div class="row col-1111">
+            <div class="card">content</div>
+            <div class="card">content</div>
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        <div class="row col-12">
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        <div class="row col-13">
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        <div class="row col-21">
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        <div class="row col-31">
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        
+        <div class="row col-112">
+            <div class="card">content</div>
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        <div class="row col-121">
+            <div class="card">content</div>
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+        <div class="row col-211">
+            <div class="card">content</div>
+            <div class="card">content</div>
+            <div class="card">content</div>
+        </div>
+    </div>
+    <footer>Footer</footer>
+</div>
+
+
+
+
+<!--
+<div class="container">
+    <nav>Navbar</nav>
+    <div id="sidebar">Sidebar</div>
+    <div id="content1" class="card">Content 1</div>
+    <div id="content2" class="card">Content 2</div>
+    <div id="content3" class="card">Content 3</div>
+    <div id="content4" class="card">Content 4</div>
+    <div id="content5" class="card">Content 5</div>
+    <div id="content6" class="card">Content 6</div>
+    <footer>Footer</footer>
+</div>
+
 <img [ngClass]="{'animated-in': logoIsAnimatedIn , 'animated-out': logoIsAnimatedOut}" src="assets/img/logo.svg" (click)="logout()">
+-->

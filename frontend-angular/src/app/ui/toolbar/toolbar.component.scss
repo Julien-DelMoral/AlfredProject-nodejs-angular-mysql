@@ -1,0 +1,32 @@
+@import 'src/app/ui/styles/variables.scss';
+.spacer {
+    flex-grow: 1;
+}
+
+.top-navigation{
+    background-color: $alfred-toolbar-bg;
+
+    .user-button{
+        background-color: $alfred-button-light-bg;
+        border: $alfred-blue solid 0.5px;
+        color: $alfred-blue;
+    }
+}
+
+::ng-deep .user-menu{
+
+    background-color: $alfred-blue;
+    margin-top: 10px;
+    
+
+    .title{
+        font-style: italic;
+        color: lightgrey ;
+        line-height: 20px;
+        height: 20px;  
+    }
+    .button{
+        color: #66788a;
+    }
+}
+

@@ -1,3 +1,5 @@
+@import 'src/app/ui/styles/variables.scss';
+@import 'src/app/ui/styles/grid.scss';
 @import '~@angular/material/theming';
 @import "toastr";
 @include mat-core();
@@ -5,10 +7,23 @@
 body { 
   margin: 0; 
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $alfred-body-bg;
 }
 
 .mat-snack-bar-container{
   box-shadow: none;
   border: none;
   background-color: transparent;
+}
+
+.mat-menu-content{
+  margin-top: 5px;
+  background-color: #fff !important;
+  button{
+    background-color: transparent;
+  }
+}
+
+.spacer {
+  flex-grow: 1;
 }

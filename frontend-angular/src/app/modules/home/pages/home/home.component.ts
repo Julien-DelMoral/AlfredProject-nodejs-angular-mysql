@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
         phone: string
       }[]) => {
         this.customers = res;
+        console.log(this.customers)
       },
       err => {
         console.log(err.message);
