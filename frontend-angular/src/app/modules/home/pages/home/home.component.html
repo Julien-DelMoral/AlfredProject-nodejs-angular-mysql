@@ -1,31 +1,11 @@
 <div class="container">
     <nav>
-        <a>Navbar</a>
-        <div class="spacer"></div>
-        <button class="user-button" mat-mini-fab [matMenuTriggerFor]="menu" inline>
-            <mat-icon>person</mat-icon>
-        </button>
-        <mat-menu class="user-menu" #menu="matMenu">
-            <span class="title" mat-menu-item>jul.delm@gmail.com</span>
-            <button class="button" mat-menu-item>
-                <mat-icon>person</mat-icon>
-                <span>Profil</span>
-            </button>
-            <button class="button" mat-menu-item>
-                <mat-icon>settings</mat-icon>
-                <span>Paramètres</span>
-            </button>
-            <button class="button" mat-menu-item (click)="logout()">
-                <mat-icon>logout</mat-icon>
-                <span>Déconnexion</span>
-            </button>
-        </mat-menu>
+        <div class="menu">
+            <app-dropdown-menu [buttonLabel]="username" [dropdownItems]="userNav" ></app-dropdown-menu>
+        </div>
     </nav>
     <div class="sidenav">Sidebar</div>
     <div class="content">
-        <div class="row">
-            <div class="card">content</div>
-        </div>
         <div class="row col-11">
             <div class="card">content</div>
             <div class="card">content</div>
@@ -57,7 +37,7 @@
             <div class="card">content</div>
             <div class="card">content</div>
         </div>
-        
+
         <div class="row col-112">
             <div class="card">content</div>
             <div class="card">content</div>

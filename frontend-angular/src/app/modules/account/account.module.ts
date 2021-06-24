@@ -13,13 +13,15 @@ import { LoginComponent } from '@account/pages/login/login.component';
 import { RegisterComponent } from '@account/pages/register/register.component';
 import { ResetPasswordComponent } from '@account/pages/reset-password/reset-password.component';
 import { ChangePasswordComponent } from '@account/pages/change-password/change-password.component';
+import { LogoutComponent } from '@account/components/logout/logout.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     ResetPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,

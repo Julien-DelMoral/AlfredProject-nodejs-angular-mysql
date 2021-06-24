@@ -34,5 +34,16 @@ nav{
     }
     .button{
         color: #66788a;
+        display: flex;
+        align-items: center;
     }
 }
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: auto;
+    width: 100%; 
+}
+

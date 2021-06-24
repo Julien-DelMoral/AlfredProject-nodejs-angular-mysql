@@ -7,6 +7,9 @@ import { AuthService } from '@core/auth';
 import { NotificationService } from '@core/notification'
 import { DataService } from '@core/data/data.service';
 
+// Models imports 
+import { NavItem } from '@ui/models/NavItem';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,6 +21,25 @@ export class HomeComponent implements OnInit {
   customers = {};
   logoIsAnimatedIn = true;
   logoIsAnimatedOut = false;
+
+  username: string ="jul.delm@gmail.com";
+  userNav : NavItem[] = [
+    {
+      displayName: 'Profil',
+      iconName: 'person',
+      route: '/profil',
+    },
+    {
+      displayName: 'Paramètres',
+      iconName: 'settings',
+      route: '/settings',
+    },
+    {
+      displayName: 'Déconnexion',
+      iconName: 'logout',
+      route: '/logout',
+    }
+  ]  
 
   constructor(
     private authenticationService: AuthService,

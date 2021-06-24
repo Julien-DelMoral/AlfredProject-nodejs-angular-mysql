@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "api/",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - api",
+			"detail": "tsc -w"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "api/",
+			"problemMatcher": [],
+			"label": "npm: dev - api",
+			"detail": "nodemon ./build/index.js"
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "frontend-angular/",
+			"problemMatcher": [],
+			"label": "npm: start - frontend-angular",
+			"detail": "ng serve --open"
+		}
+	]
+}

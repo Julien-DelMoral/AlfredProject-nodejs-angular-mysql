@@ -11,11 +11,15 @@ import { HomeComponent } from '@home/pages/home/home.component';
 import { ToolbarComponent } from '@ui/toolbar/toolbar.component';
 import { SidenavComponent } from '@ui/sidenav/sidenav.component';
 
+// Ui components imports 
+import { DropdownMenuComponent } from '@ui/dropdown-menu/dropdown-menu.component';
+
 @NgModule({
   declarations: [
     HomeComponent,
     ToolbarComponent,
-    SidenavComponent
+    SidenavComponent,
+    DropdownMenuComponent
   ],
   imports: [
     CommonModule,

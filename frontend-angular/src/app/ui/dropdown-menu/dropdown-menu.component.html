@@ -1,0 +1,10 @@
+<div class="user">
+    <button>{{buttonLabel}}<mat-icon>arrow_drop_down</mat-icon></button>
+    <ul>
+        <li *ngFor="let item of dropdownItems">
+            <a [routerLink]="item.route">
+                <mat-icon>{{item.iconName}}</mat-icon>{{item.displayName}}
+            </a>
+        </li>
+    </ul>
+</div>

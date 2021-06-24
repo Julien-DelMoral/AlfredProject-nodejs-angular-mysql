@@ -3,7 +3,6 @@
     box-sizing: border-box;
     display: grid;
     min-height: 100vh;
-
     grid-template-columns: 1fr;
     grid-template-rows: 50px 4fr .2fr;
     grid-template-areas: 
@@ -54,18 +53,12 @@ nav {
     
 }
 
-
-
-
-
 footer {
     box-sizing: border-box;
-    background: #1de9b6;
     grid-area: footer;
     padding-top: var(--main-padding);
     height: 50px;
 }
-
 
 
 @media (min-width: 576px){
